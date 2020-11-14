@@ -71,7 +71,7 @@ def write_error(message: str) -> bool:
 	file.flush()
 
 
-def writeException(message: str) -> bool:
+def write_exception(message: str) -> bool:
 	"""Writes an Exception to the log file.
 	Normally used in try/catch blocks.
 	Parems:
@@ -84,7 +84,7 @@ def writeException(message: str) -> bool:
 		return False
 	file.write(f"{datetime.datetime.now()}\n")
 	file.write(f"Exception: {message}\n----\n{traceback.format_exc()}----\n")
-	debugFile.flush()
+	file.flush()
 	return True
 
 
